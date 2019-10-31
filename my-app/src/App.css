@@ -1,0 +1,60 @@
+.headtitle {
+  font-size: 100px;
+}
+
+.searchbar {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.searchbar>input {width: 100%;}
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 white;
+  transition: 0.3s;
+  margin-bottom: 40px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 white;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  color: black;
+}
+
+.imag {
+  width: 100%;
+}
+
+.right {
+  margin-right: 10px;
+}
