@@ -4,6 +4,7 @@ import './styles/bootstrap.min.css'
 import { Card } from './components/card'
 import './App.css';
 import {InputGroup, FormControl, Button, Row, Col, Image, Container} from 'react-bootstrap';
+// import response from './server.js'
 import platesArr from './components/images'
 
 function App() {
