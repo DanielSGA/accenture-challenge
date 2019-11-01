@@ -7,56 +7,76 @@ import {InputGroup, FormControl, Button, Row, Col, Image, Container} from 'react
 // import response from './server.js'
 import platesArr from './components/images'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header"> 
-        <div className="headtitle">Plate Search 🚘</div>
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <InputGroup className="mb-3 searchbar justify-content-md-center">
-              <FormControl
-                placeholder="Write your car's plate number"
-                aria-label="Write your car's plate number"
-                aria-describedby="basic-addon2"
-              />
-              <InputGroup.Append>
-                <Button variant="outline-secondary">Search</Button>
-              </InputGroup.Append>
-            </InputGroup>
-          </Col>
-        </Row>
 
-        <Container>
+
+class App extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state = {inputValue: "",temparr : platesArr}
+  }
+
+  updateValue=(event)=>{
+    this.setState({
+      inputValue: event.target.value
+    })
+  }
+
+   filterPlates=()=> {
+    console.log(this.state.inputValue)
+    console.log(platesArr[0].name)
+    let item = []
+    for(var i = 0; i < 4; i++){
+      if(this.state.inputValue === platesArr[i].name)
+      {
+
+         item = platesArr[i]
+         this.render()
+      }
+    }
+    this.setState({temparr:[item]})
+    }
+
+  render(){
+    const temparr = this.state.temparr
+    return (
+      <div className="App">
+        <header className="App-header"> 
+          <div className="headtitle">Plate Search 🚘</div>
           <Row>
-            <Col>
-              <Card img={platesArr[0].imag} name={platesArr[0].name} color={platesArr[0].color}></Card>
-            </Col>
-            <Col>
-              <Card img={platesArr[1].imag} name={platesArr[1].name} color={platesArr[1].color}></Card>
-            </Col>
-            <Col>
-              <Card img={platesArr[2].imag} name={platesArr[2].name} color={platesArr[2].color}></Card>
-            </Col>
-            <Col className="right">
-              <Card img={platesArr[4].imag} name={platesArr[4].name} color={platesArr[3].color}></Card>
+            <Col md={{ span: 6, offset: 3 }}>
+              <InputGroup className="mb-3 searchbar justify-content-md-center">
+                <FormControl
+                  placeholder="Write your car's plate number"
+                  aria-label="Write your car's plate number"
+                  aria-describedby="basic-addon2"
+                  inputRef={ref => { this.myInput = ref; }}
+                  onChange={this.updateValue}
+                />
+                <InputGroup.Append>
+                  <Button variant="outline-secondary" onClick={this.filterPlates}>Search</Button>
+                </InputGroup.Append>
+              </InputGroup>
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <Card img={platesArr[3].imag} name={platesArr[3].name} color={platesArr[4].color}></Card>
-            </Col>
-            <Col>
-            </Col>
-            <Col>
-            </Col>
-            <Col>
-            </Col>
-          </Row>
-        </Container>
-      </header>
-    </div>
-  );
+  
+          <Container>
+            <Row>
+
+              {
+                temparr.map(item=>{
+                return (<Col>
+                  <Card img={item.imag} name={item.name} color={item.color}></Card>
+                </Col>)
+              })
+              }
+            </Row>
+            
+          </Container>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
