@@ -50,7 +50,9 @@ def facechop(image):
             face_file_name = "faces/face_" + str(y) + ".jpg"
             print(face_file_name,dimensions)
             cv2.imwrite(face_file_name, sub_face)
-            cv2.imshow(image, img)
+            cv2.imwrite("detected/face_"+str(y)+".jpg",img)
+            # cv2.imshow(image, img)
+
 
 
     return
