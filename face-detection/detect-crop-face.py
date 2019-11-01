@@ -21,7 +21,7 @@ def facechop(image):
     miniframe = cv2.resize(s1, minisize)
 
     faces = cascade.detectMultiScale(miniframe)
-    print(faces)
+    # print(faces)
     dim = []
     for f in faces:
         x, y, w, h = [ v for v in f ]
@@ -33,25 +33,18 @@ def facechop(image):
         # max([(v,i) for i,v in enumerate(my_list)])
         max_dim = max([(v,i) for i,v in enumerate(dim)])
 
-
-
-        # if dimensions[0] > 80:
-        #     face_file_name = "faces/face_" + str(y) + ".jpg"
-        #     print(face_file_name,dimensions)
-        #     cv2.imwrite(face_file_name, sub_face)
-        #     cv2.imshow(image, img)
     for f in range(len(faces)):
-        print(faces[f][2])
-        print(max_dim[0])
+        # print(faces[f][2])
+        # print(max_dim[0])
         x, y, w, h = [ v for v in faces[f]]
         sub_face = img[y:y+h, x:x+w]
         if faces[f][2] == max_dim[0]:
-            cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0),2)
+            cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0),5)
             face_file_name = "faces/face_" + str(y) + ".jpg"
-            print(face_file_name,dimensions)
+            # print(face_file_name,dimensions)
             cv2.imwrite(face_file_name, sub_face)
             cv2.imwrite("detected/face_"+str(y)+".jpg",img)
-            # cv2.imshow(image, img)
+            cv2.imshow(image, img)
 
 
 
@@ -66,11 +59,15 @@ def cut_half(img):
     return s1
 
 if __name__ == '__main__':
-    img = "data-set/test3.jpg"
+    img1 = "data-set/test1.jpg"
+    img2 = "data-set/test2.jpg"
+    img3 = "data-set/test3.jpg"
     #Mat halfLeft = frame(Rect(0, 0, frame.cols/2, frame.rows));
 
     # img = cut_half(img)
-    facechop(img)
+    facechop(img1)
+    facechop(img2)
+    facechop(img3)
 
     while(True):
         key = cv2.waitKey(20)
