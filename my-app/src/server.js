@@ -1,5 +1,5 @@
+import config from './config.json'
 const aws = require('aws-sdk')
-const config = require('./config.json')
 
 (async function() {
     try {
