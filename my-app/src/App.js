@@ -39,12 +39,12 @@ function App() {
               <Card img={platesArr[2].imag} name={platesArr[2].name} color={platesArr[2].color}></Card>
             </Col>
             <Col className="right">
-              <Card img={platesArr[4].imag} name={platesArr[4].name} color={platesArr[4].color}></Card>
+              <Card img={platesArr[4].imag} name={platesArr[4].name} color={platesArr[3].color}></Card>
             </Col>
           </Row>
           <Row>
             <Col>
-              <Card img={platesArr[3].imag} name={platesArr[3].name} color={platesArr[3].color}></Card>
+              <Card img={platesArr[3].imag} name={platesArr[3].name} color={platesArr[4].color}></Card>
             </Col>
             <Col>
             </Col>
