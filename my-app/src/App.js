@@ -1,10 +1,10 @@
 import React from 'react';
-import temp from './temp.jpg';
+import temp from './img/temp.jpg';
 import './styles/bootstrap.min.css'
 import { Card } from './components/card'
 import './App.css';
 import {InputGroup, FormControl, Button, Row, Col, Image, Container} from 'react-bootstrap';
-import response from './server.js'
+import platesArr from './components/images'
 
 function App() {
   return (
@@ -29,16 +29,27 @@ function App() {
         <Container>
           <Row>
             <Col>
-              <Card img={temp}></Card>
+              <Card img={platesArr[0].imag} name={platesArr[0].name} color={platesArr[0].color}></Card>
             </Col>
             <Col>
-              <Card img={temp}></Card>
+              <Card img={platesArr[1].imag} name={platesArr[1].name} color={platesArr[1].color}></Card>
             </Col>
             <Col>
-              <Card img={temp}></Card>
+              <Card img={platesArr[2].imag} name={platesArr[2].name} color={platesArr[2].color}></Card>
             </Col>
             <Col className="right">
-              <Card img={temp}></Card>
+              <Card img={platesArr[4].imag} name={platesArr[4].name} color={platesArr[4].color}></Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Card img={platesArr[3].imag} name={platesArr[3].name} color={platesArr[3].color}></Card>
+            </Col>
+            <Col>
+            </Col>
+            <Col>
+            </Col>
+            <Col>
             </Col>
           </Row>
         </Container>
