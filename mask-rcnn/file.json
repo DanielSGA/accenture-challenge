@@ -1,0 +1,24 @@
+{
+    "people": [
+        {
+            "HEX CODE" : "#07090b",
+            "Plate number": "MCLRNF1",
+            "Name": "Jorge"
+            },
+        {
+            "HEX CODE": "#171517",
+            "Plate Number": "171NVX75",
+            "Name": "Sheccid"
+            },
+        {
+            "HEX CODE":"#070707",
+            "Plate Number":"SW771AE",
+            "Name": "Flor"
+            },
+        {
+            "HEX CODE":"#1d1E1f",
+            "Plate Number":"BKF196",
+            "Name": "Daniel"
+            }
+        ]
+    }
