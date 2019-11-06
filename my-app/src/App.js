@@ -65,7 +65,7 @@ class App extends React.Component {
 
               {
                 temparr.map(item=>{
-                return (<Col>
+                return (<Col md={{ span: 2, offset: 1 }}>
                   <Card img={item.imag} name={item.name} color={item.color}></Card>
                 </Col>)
               })
