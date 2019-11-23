@@ -31,8 +31,6 @@ Al tener una fotografía de la placa, se detecta el texto y se guardan las imág
 
 #### Caras
 Utilizando OPENCV en Python, se toman las fotografías para luego tomar el lado izquierdo de esta imagen y detectarla mediante Haarcascade.
-
-![face](face-detection/detected/face_412.jpg)
 comando para correr el código: `$python3 detect-crop-face.py`
 ### Estacionamiento
 Otro aspecto que contemplaba nuestra solución era la detección de aquellos espacios disponibles del estacionamiento para así, darle al usuario que ingresaba aquél lugar disponible para que se estacionara.
